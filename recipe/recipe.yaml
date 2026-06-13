@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.2.8"
+  version: "0.3.0"
   python_min: "3.11"
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/i/id-protocol/id_protocol-${{ version }}.tar.gz
-  sha256: 69189dbb1fc936d44631dfdd7b7cb7508ec1fc2bc2e03099e5b2bbda867ff028
+  sha256: f9162104bb5476356cd1426e96f5da93c2cb2a760532c73691aa09081c44c474
 
 build:
   number: 0
