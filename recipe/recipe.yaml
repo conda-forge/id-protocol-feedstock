@@ -2,7 +2,6 @@ schema_version: 1
 
 context:
   version: "0.5.1"
-  python_min: "3.11"
 
 package:
   name: id-protocol
@@ -42,6 +41,12 @@ tests:
         - python ${{ python_min }}.*
     script:
       - idctl --help
+      - idctl init --owner-id conda-test
+      - idctl validate --owner-id conda-test
+      - idctl refresh-soul --owner-id conda-test
+      - idctl export-interop --owner-id conda-test
+      - idctl export-compact --owner-id conda-test
+      - idctl validate-compact --owner-id conda-test
 
 about:
   summary: Portable human-AI context protocol reference tooling
