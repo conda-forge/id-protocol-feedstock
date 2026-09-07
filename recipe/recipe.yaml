@@ -1,8 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.3.0"
-  python_min: "3.11"
+  version: "0.5.1"
 
 package:
   name: id-protocol
@@ -10,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/i/id-protocol/id_protocol-${{ version }}.tar.gz
-  sha256: f9162104bb5476356cd1426e96f5da93c2cb2a760532c73691aa09081c44c474
+  sha256: 2193f147b5abfe2dc4e8e242531926124ab6bd6d0104934da44f0c7a6f31a9c3
 
 build:
   number: 0
@@ -42,6 +41,12 @@ tests:
         - python ${{ python_min }}.*
     script:
       - idctl --help
+      - idctl init --owner-id conda-test
+      - idctl validate --owner-id conda-test
+      - idctl refresh-soul --owner-id conda-test
+      - idctl export-interop --owner-id conda-test
+      - idctl export-compact --owner-id conda-test
+      - idctl validate-compact --owner-id conda-test
 
 about:
   summary: Portable human-AI context protocol reference tooling
